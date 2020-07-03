@@ -22,7 +22,7 @@ class MemoDetailScreen extends React.Component {
          </Text>
        </View>
 
-       <CircleButton style={styles.editButton}>+</CircleButton>
+    <CircleButton name="pencil" style={styles.editButton} />
 
       </View>
     );
