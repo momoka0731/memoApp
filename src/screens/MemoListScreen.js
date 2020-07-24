@@ -8,7 +8,7 @@ import CircleButton from '../elements/CircleButton';
 
 class MemoListScreen extends React.Component {
   state = {
-    memkoList: [],
+    memoList: [],
   }
   
   componentDidMount() {
@@ -19,7 +19,7 @@ class MemoListScreen extends React.Component {
     .then((snapshot) => {
       const memoList = [];
       snapshot.forEach((doc) => {
-        memoList.push(doc.data());
+        memoList.push({ ...doc.data(), key: doc.id });
       });
       this.setState({ memoList });
     })
