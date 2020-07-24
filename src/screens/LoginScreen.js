@@ -6,14 +6,14 @@ import { StyleSheet, View, Text, TextInput, TouchableHighlight } from 'react-nat
 
 class LoginScreen extends React.Component {
   state = {
-    email: '',
-    password: '',
+    email: 'userone@gmail.com',
+    password: 'password',
   }
   handleSubmit() {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
     .then((authResult) => {
       console.log('success', authResult.user.uid);
-      this.props.navigation.navigate('Home', { currentUser: authResult.user });
+      this.props.navigation.navigate('Home');
     })
     .catch((error) => {
       console.log('error', error);
