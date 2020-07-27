@@ -1,5 +1,5 @@
 import React, { memo } from 'react';
-import { StyleSheet, View, Text } from 'react-native';
+import { StyleSheet, View, Text, TouchableHighlightBase } from 'react-native';
 
 import CircleButton from '../elements/CircleButton';
 
@@ -20,6 +20,9 @@ class MemoDetailScreen extends React.Component {
   componentDidMount() {
     const { params } = this.props.navigation.state;
     this.setState({ memo: params.memo });
+  }
+  returnMemo(memo) {
+    this.setState({ memo });
   }
 
   
@@ -44,9 +47,9 @@ class MemoDetailScreen extends React.Component {
        </View>
 
     <CircleButton 
-    name="pencil" 
-    style={styles.editButton} 
-    onPress={() => { this.props.navigation.navigate('MemoEdit', { memo }); }}
+      name="pencil" 
+      style={styles.editButton} 
+      onPress={() => { this.props.navigation.navigate('MemoEdit', { memo, returnMemo: this.returnMemo.bind(this) }); }}
     />
 
       </View>
