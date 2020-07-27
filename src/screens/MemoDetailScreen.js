@@ -1,14 +1,14 @@
-import React, { memo } from 'react';
-import { StyleSheet, View, Text, TouchableHighlightBase } from 'react-native';
+import React from 'react';
+import { StyleSheet, View, Text } from 'react-native';
 
 import CircleButton from '../elements/CircleButton';
 
 const dateString = (date) => {
-  // 存在しない場合は空文字列を返すと安全です
+  
   if (date == null) { return ''; }
-  // firebaseのTimestamp型をDate型に変換する
+  
   const dateObject = date.toDate();
-  // Dateオブジェクトを文字列に変換する
+  
   return dateObject.toISOString().split('T')[0];
 };
 

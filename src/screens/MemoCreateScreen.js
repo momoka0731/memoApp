@@ -19,11 +19,12 @@ class MemoCreateScreen extends React.Component {
       body: this.state.body,
       createdOn: new Date(),
     })
-    .then((docRef) => {
-      console.log(docRef.id);
+    .then(() => {
+      this.props.navigation.goBack();
+      
     })
-    .catch((error) => {
-      console.log(error);
+    .catch(() => {
+     
     });
   }
   render() {
@@ -32,6 +33,7 @@ class MemoCreateScreen extends React.Component {
 
         <TextInput 
           style={styles.memoEditInput} 
+          multiline
           value={this.state.body}
           onChangeText={(text) => { this.setState({ body: text }); }} 
         />
