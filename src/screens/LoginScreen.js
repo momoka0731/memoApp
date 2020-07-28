@@ -8,8 +8,8 @@ import { TouchableOpacity } from 'react-native-gesture-handler';
 
 class LoginScreen extends React.Component {
   state = {
-    email: 'userone@gmail.com',
-    password: 'password',
+    email: '',
+    password: '',
   }
   handleSubmit() {
     firebase.auth().signInWithEmailAndPassword(this.state.email, this.state.password)
